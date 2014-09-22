@@ -1,4 +1,4 @@
-# erlang.mk Makefile for tinymt-erlang
+# erlang.mk Makefile for exs64
 
 PROJECT = exs64
 
