@@ -1,0 +1,8 @@
+{application, exs64, [
+    {description, "Xorshift64star PRNG for Erlang"},
+    {vsn, "0.0.1"},
+    {env, []},
+    {registered, []},
+    {modules, [exs64]},
+    {applications, [kernel, stdlib]}
+]}.
