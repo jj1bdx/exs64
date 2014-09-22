@@ -54,6 +54,7 @@
 
 -opaque state() :: uint64().
 
+-define(UINT32MASK, 16#ffffffff).
 -define(UINT64MASK, 16#ffffffffffffffff).
 
 %% @doc Advance xorshift64star state for one step.
@@ -110,9 +111,10 @@ seed({A1, A2, A3}) ->
 -spec seed(integer(), integer(), integer()) -> 'undefined' | state().
 
 seed(A1, A2, A3) ->
-    S = ((A1 * 4294967197) * (A2 * 4294967231) * (A3 * 4294967279)
-        rem 16#fffffffffffffffffffffffffffffffe) + 1,
-    seed_put(S band ?UINT64MASK).
+    {V1, _} = next(((A1 band ?UINT32MASK) * 4294967197 + 1)),
+    {V2, _} = next(((A2 band ?UINT32MASK) * 4294967231 + 1)),
+    {V3, _} = next(((A3 band ?UINT32MASK) * 4294967279 + 1)),
+    seed_put(((V1 * V2 * V3) rem (?UINT64MASK - 1)) + 1).
 
 %% @doc Generate float from
 %% given xorshift64star internal state.
