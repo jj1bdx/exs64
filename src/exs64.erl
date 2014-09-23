@@ -152,7 +152,7 @@ uniform_s(Max, R) when is_integer(Max), Max >= 1 ->
     {V, R1} = next(R),
     {(V rem Max) + 1, R1}.
 
-%% @doc Generate integer from the given TinyMT internal state
+%% @doc Generate integer from the given xorshift64star internal state
 %% in the process dictionary.
 %% (Note: 1 =&lt; result =&lt; N (given positive integer))
 %% (compatible with random:uniform/1)
