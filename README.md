@@ -12,8 +12,8 @@ MIT License.
 
 # Tested platforms
 
-* FreeBSD/amd64 10-STABLE with Erlang/OTP 17.3 and HiPE
-* OS X x86\_64 10.9.5 with Erlang/OTP 17.3 and HiPE
+* FreeBSD/amd64 10.1-STABLE with Erlang/OTP 17.4 and HiPE
+* OS X x86\_64 10.10.1 with Erlang/OTP 17.4 and HiPE
 
 * HiPE is not a requirement but recommended to be enabled.
 
