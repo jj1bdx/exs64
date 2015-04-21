@@ -68,9 +68,6 @@ next(R) ->
     R1 = R bxor (R bsr 12),
     R2 = R1 bxor ((R1 band ?UINT39MASK) bsl 25),
     R3 = R2 bxor (R2 bsr 27),
-    io:format("~p~n", [[R1 band ?UINT64MASK,
-                R2 band ?UINT64MASK,
-                R3 band ?UINT64MASK]]),
     {(R3 * 2685821657736338717) band ?UINT64MASK, R3}.
 
 -spec seed0() -> state().
