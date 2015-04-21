@@ -32,6 +32,7 @@ all() ->
 
 testloop(N) ->
     R = exs64:seed0(),
+    % R = exs64:seed({100,200,300}),
     testloop(N, R, []).
 
 testloop(0, _, L) ->
@@ -43,7 +44,10 @@ testloop(N, R, L) ->
 testloop_test(_Config) ->
     Refval = test_refval(),
     Testval = testloop(length(Refval)),
-    Refval =:= Testval.
+    case Refval =:= Testval of
+        true -> ok;
+        Else -> exit(Else)
+    end.
 
 test_refval() ->
     [
