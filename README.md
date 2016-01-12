@@ -1,8 +1,15 @@
 # exs64: xorshift64star PRNG for Erlang
 
+Note 12-JAN-2016: this algorithm is no longer listed as a part of Xorshift\*/+
+webpage. See
+<https://web.archive.org/web/20150905215225/http://xorshift.di.unimi.it/> for
+the old archive.  No further development will be made. Use `exsplus` or the
+rand module in OTP 18 and later.
+
 xorshift64star is a 64-bit PRNG of (2^64-1) period.
 
 See <http://xorshift.di.unimi.it/> for the further details.
+
 
 ## LICENSE
 
